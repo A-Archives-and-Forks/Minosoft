@@ -607,12 +607,14 @@ val fatJar = tasks.register("fatJar", fun Jar.() {
         exclude("com/sun/jna/freebsd*/**")
         exclude("com/sun/jna/openbsd*/**")
         exclude("com/sun/jna/dragonflybsd*/**")
-        exclude("com/sun/jna/platform/unix/**")
         exclude("com/sun/jna/platform/bsd/**")
         exclude("oshi/software/os/unix/**")
         exclude("oshi/hardware/platform/unix/**")
         exclude("oshi/driver/unix/**")
         exclude("org/lwjgl/system/freebsd/**")
+    }
+    if (PlatformInfo.OS != OSTypes.MAC && PlatformInfo.OS != OSTypes.UNIX) {
+        exclude("com/sun/jna/platform/unix/**")
     }
     if (PlatformInfo.OS != OSTypes.LINUX) {
         exclude("com/sun/jna/platform/linux/**")

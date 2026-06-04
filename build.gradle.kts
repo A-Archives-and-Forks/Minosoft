@@ -381,6 +381,8 @@ dependencies {
     implementation("it.unimi.dsi", "fastutil-core", "8.5.18")
     implementation("org.xeustechnologies", "jcl-core", "2.8")
 
+    compileOnly("org.jspecify", "jspecify", "1.0.0")
+
 
     // ikonli
     ikonli("fontawesome5-pack")

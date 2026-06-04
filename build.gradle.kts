@@ -48,7 +48,7 @@ import java.util.stream.Collectors
 
 
 plugins {
-    kotlin("jvm") version "2.3.0"
+    kotlin("jvm") version "2.4.0"
     `jvm-test-suite`
     application
     id("com.github.ben-manes.versions") version "0.53.0"
@@ -180,7 +180,7 @@ testing {
             dependencies {
                 implementation(project())
                 implementation("de.bixilon:kutil:$kutilVersion")
-                implementation("org.jetbrains.kotlin:kotlin-test:2.3.0")
+                implementation("org.jetbrains.kotlin:kotlin-test:2.4.0")
                 implementation("com.github.ajalt.clikt:clikt:5.0.3")
             }
 
@@ -416,7 +416,7 @@ dependencies {
     lwjgl("opengl", classpath = Rendering.OPENGL in renderings)
 
     // kotlin
-    implementation(kotlin("reflect", "2.3.0"))
+    implementation(kotlin("reflect", "2.4.0"))
 
 
     // platform specific
@@ -549,7 +549,7 @@ java {
 kotlin {
     compilerOptions {
         jvmTarget.set(JvmTarget.JVM_11)
-        languageVersion.set(KotlinVersion.KOTLIN_2_3)
+        languageVersion.set(KotlinVersion.KOTLIN_2_4)
         freeCompilerArgs.add("-Xskip-prerelease-check")
         freeCompilerArgs.add("-Xallow-unstable-dependencies")
         freeCompilerArgs.add("-Xwarning-level=NOTHING_TO_INLINE:disabled")

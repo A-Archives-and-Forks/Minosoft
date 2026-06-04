@@ -51,7 +51,7 @@ plugins {
     kotlin("jvm") version "2.4.0"
     `jvm-test-suite`
     application
-    id("com.github.ben-manes.versions") version "0.53.0"
+    id("com.github.ben-manes.versions") version "0.54.0"
 }
 
 fun getProperty(name: String): String {
@@ -175,13 +175,13 @@ when (os) {
 testing {
     suites {
         val test by getting(JvmTestSuite::class) {
-            useJUnitJupiter("5.9.2")
+            useJUnitJupiter("5.14.4")
 
             dependencies {
                 implementation(project())
                 implementation("de.bixilon:kutil:$kutilVersion")
                 implementation("org.jetbrains.kotlin:kotlin-test:2.4.0")
-                implementation("com.github.ajalt.clikt:clikt:5.0.3")
+                implementation("com.github.ajalt.clikt:clikt:5.1.0")
             }
 
             targets {
@@ -214,12 +214,12 @@ testing {
 
 
         val integrationTest by registering(JvmTestSuite::class) {
-            useTestNG("7.7.1")
+            useTestNG("7.12.0")
 
             dependencies {
                 implementation(project())
 
-                implementation("org.objenesis:objenesis:3.4")
+                implementation("org.objenesis:objenesis:3.5")
 
                 // ToDo: Include dependencies from project
                 implementation("de.bixilon:kutil:$kutilVersion")
@@ -278,7 +278,7 @@ testing {
             dependencies {
                 implementation(project())
 
-                implementation("org.objenesis:objenesis:3.4")
+                implementation("org.objenesis:objenesis:3.5")
 
                 // ToDo: Include dependencies from project
                 implementation("de.bixilon:kutil:$kutilVersion")
@@ -370,13 +370,13 @@ fun DependencyHandler.lwjgl(name: String? = null, classpath: Boolean = true) {
 }
 
 dependencies {
-    implementation("org.slf4j", "slf4j-api", "2.0.17")
-    implementation("dnsjava", "dnsjava", "3.6.3")
-    implementation("com.github.ajalt.clikt", "clikt", "5.0.3")
-    implementation("org.jline", "jline", "3.30.6")
+    implementation("org.slf4j", "slf4j-api", "2.0.18")
+    implementation("dnsjava", "dnsjava", "3.6.5")
+    implementation("com.github.ajalt.clikt", "clikt", "5.1.0")
+    implementation("org.jline", "jline", "4.1.3")
     implementation("org.l33tlabs.twl", "pngdecoder", "1.0")
-    implementation("com.github.oshi", "oshi-core", "6.9.2")
-    implementation("com.github.luben", "zstd-jni", "1.5.7-6", classifier = zstdNatives)
+    implementation("com.github.oshi", "oshi-core", "7.2.1")
+    implementation("com.github.luben", "zstd-jni", "1.5.7-10", classifier = zstdNatives)
     implementation("org.kamranzafar", "jtar", "2.3")
     implementation("it.unimi.dsi", "fastutil-core", "8.5.18")
     implementation("org.xeustechnologies", "jcl-core", "2.8")

@@ -1,6 +1,6 @@
 /*
  * Minosoft
- * Copyright (C) 2020-2025 Moritz Zwerger
+ * Copyright (C) 2020-2026 Moritz Zwerger
  *
  * This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
  *
@@ -13,7 +13,7 @@
 
 package de.bixilon.minosoft.gui.rendering.camera.occlusion
 
-import de.bixilon.kutil.bit.set.AbstractBitSet
+import de.bixilon.kutil.bit.set.BitSet
 import de.bixilon.minosoft.data.world.positions.ChunkPosition
 import de.bixilon.minosoft.data.world.positions.SectionPosition
 
@@ -21,7 +21,7 @@ class SectionPositionSet private constructor(
     val offset: SectionPosition,
     val size: SectionPosition,
 ) { // Don't inherit from set, it will box primitives
-    private val set = AbstractBitSet.of((size.x + 1) * (size.y + 1) * (size.z + 1)) // TODO: cache old set one
+    private val set = BitSet.of((size.x + 1) * (size.y + 1) * (size.z + 1)) // TODO: cache old set one
 
     init {
         assert(size.x > 0)

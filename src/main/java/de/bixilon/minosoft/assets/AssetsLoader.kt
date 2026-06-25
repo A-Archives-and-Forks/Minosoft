@@ -51,8 +51,8 @@ object AssetsLoader {
 
         manager.addResourcePacks(profile)
 
-        for (format in 1..properties.pack.format) {
-            manager += IntegratedAssets.VERSIONED[format - 1] ?: continue
+        for (format in properties.pack.format downTo 1) {
+            manager += IntegratedAssets.VERSIONED.getOrNull(format - 1) ?: continue
         }
 
         if (!profile.assets.disableIndexAssets) {

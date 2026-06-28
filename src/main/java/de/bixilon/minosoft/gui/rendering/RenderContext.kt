@@ -51,7 +51,7 @@ class RenderContext(
     val tints = TintManager(session)
     val textures = system.createTextureManager()
 
-    val queue = Queue()
+    val queue = Queue() // TODO: kutil 1.32: catch=false
 
     val shaders = ShaderManager(this)
     val framebuffer = FramebufferManager(this)

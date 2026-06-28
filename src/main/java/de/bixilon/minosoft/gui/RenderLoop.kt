@@ -36,9 +36,6 @@ class RenderLoop(
 ) {
     private var slowRendering = context.profile.performance.slowRendering
 
-    private var lastFrame = 0.0
-
-
     init {
         context.profile.performance::slowRendering.observe(this) { this.slowRendering = it }
     }
